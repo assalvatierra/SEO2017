@@ -23,7 +23,10 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
 ('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
 ('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2),
-('Camiguin Tour Package','Tour Package','ProductDefaultView','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3);
+('Camiguin Tour Package','Tour Package','ProductDefaultView','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3),
+('White Water Rafting - Davao','Water Rafting','DavaoPackages/WaterRafting','/Images/Destinations/Davao/DavaoWaterRafting.jpg',3,1);
+('Samal Inland Tour','Beach and Resorts','DavaoPackages/SamalTour','/Images/Destinations/Davao/DavaoWaterRafting.jpg',4,1);
+('Seagull Mountain Resort','Resort and Accommodation','DavaoPackages/SeagullMtResort','/Images/Destinations/Davao/Buda_seagullResortView2.jpg',5,1);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -119,18 +122,34 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',8),
 -- Camiguin - Tour Package --
-(13,'/Images/Destinations/Bohol/attraction_camiguinCross.jpg','Camiguin Cross','Camiguin Cross',1),
-(13,'/Images/Destinations/Bohol/attraction_camiguinColdSpring.jpg','Camiguin Cold Spring','Camiguin Cold Spring',2),
-(13,'/Images/Destinations/Bohol/attraction_camiguinKatigbasawFalls.jpg','Camiguin Katigbasaw Falls','Camiguin Katigbasaw Falls',3),
-(13,'/Images/Destinations/Bohol/attraction_camiguinMantigueIsland.jpg','Camiguin Matigue Island','Camiguin Matigue Island',4),
-(13,'/Images/Destinations/Bohol/attraction_camiguinpond.jpg','Camiguin Pond','Camiguin Pond',5);
+(13,'/Images/Destinations/Camiguin/attraction_camiguinCross.jpg','Camiguin Cross','Camiguin Cross',1),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinColdSpring.jpg','Camiguin Cold Spring','Camiguin Cold Spring',2),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinKatigbasawFalls.jpg','Camiguin Katigbasaw Falls','Camiguin Katigbasaw Falls',3),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinMantigueIsland.jpg','Camiguin Matigue Island','Camiguin Matigue Island',4),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinpond.jpg','Camiguin Pond','Camiguin Pond',5),
+-- White Water Rafting Davao - Water Rafting Package --
+(14,'/Images/Destinations/Davao/DavaoWaterRaftingMap.jpg','Water Rafting Map','Water Rafting Map',1),
+(14,'/Images/Destinations/Davao/DavaoWaterRafting.jpg','Water Rafting Boat','Water Rafting Map',2),
+(14,'/Images/Destinations/Davao/DavaoWaterRafting1.jpg','Water Rafting Boat Davao Tour','CWater Rafting Map  Davao Tour',3),
+-- Samal Inland Tour - Tour PAckage --
+(15,'/Images/Destinations/Davao/SamalIslaBonita.jpg','Samal Isla Bonita','Water Rafting Map',1),
+(15,'/Images/Destinations/Davao/SamalIslaReta.jpg','Isla Reta','Water Rafting Map',2),
+(15,'/Images/Destinations/Davao/samalMaximaSlide.jpg','Maxima Slide','Maxima Slide',3),
+(15,'/Images/Destinations/Davao/BatCaveSamal.jpg','Samal Bat Cave','Bat Cave Samal',4),
+-- Samal Inland Tour - Tour PAckage --
+(15,'/Images/Destinations/Davao/Buda_seagullResortView2.jpg','Seagull Resort View','Seagull Resort View',1),
+(15,'/Images/Destinations/Davao/Buda_seagullResortView1.jpg','Seagull Resort View','Seagull Resort View',2),
+(15,'/Images/Destinations/Davao/Buda_seagullResortHouse.jpg','Seagull Resort Cottage','Seagull Resort Cottage',3),
+(15,'/Images/Destinations/Davao/Buda_mountainOverlooking.jpg','Buda Mountains Overlooking','Buda Mountains Overlooking',4),
+(15,'/Images/Destinations/Davao/Buda_seagullResortWaterfalls.jpg','Buda Seagull Waterfalls','Buda Seagull Waterfalls',5);
+
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
-(1,1),(1,2), -- Davao
+(1,1),(1,2), (1,14), (1,15), (1,16), -- Davao
 (1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages 
-(2,6),(2,7),(2,8),(2,9),(2,10),(2,11); -- bohol add on products
-(3,13); -- Camiguin Tour Package
+(2,6),(2,7),(2,8),(2,9),(2,10),(2,11), -- bohol add on products
+(1,13); -- Camiguin Tour Package
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);
@@ -186,7 +205,7 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (13,'','','Exclusions (available upon request)',4),
 (13,'','','Airfare, Tour guide, Meals and Accommodation',5),
 (13,'','','- Gui-ob Church',6),
-(13,'','','- Sto. Niño Cold Spring',7);
+(13,'','','- Sto. Niño Cold Spring',7));
 
 
 Insert into tpKeywords([Keyword],[tpProductsId]) values
@@ -200,7 +219,10 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Bohol','10'),('Tour','10'),('Travel','10'),('Vacation','10'),('Package','10'),
 ('Bohol','11'),('Tour','11'),('Travel','11'),('Vacation','11'),('Package','11'),
 ('Bohol','12'),('Tour','12'),('Travel','12'),('Vacation','12'),('Package','12'),
-('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13');
+('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13'),
+('Davao','14'),('Tour','14'),('Water','14'),('Vacation','14'),('Rafting','14'),
+('Davao','15'),('Tour','15'),('Samal','15'),('Vacation','15'),('Package','15'),
+('Davao','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16');
 
 
 Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values

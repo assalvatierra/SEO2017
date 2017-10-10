@@ -23,7 +23,7 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
 ('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
 ('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2),
-('Camiguin Tour Package','Tour Package','ProductDefaultView','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3);
+('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -119,18 +119,18 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_02.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',7),
 (12,'/Images/Destinations/Bohol/attraction_islandHopping_snorkeling_03.jpg','','Island Hopping Snorkeling Balicasag Island Bohol ',8),
 -- Camiguin - Tour Package --
-(13,'/Images/Destinations/Bohol/attraction_camiguinCross.jpg','Camiguin Cross','Camiguin Cross',1),
-(13,'/Images/Destinations/Bohol/attraction_camiguinColdSpring.jpg','Camiguin Cold Spring','Camiguin Cold Spring',2),
-(13,'/Images/Destinations/Bohol/attraction_camiguinKatigbasawFalls.jpg','Camiguin Katigbasaw Falls','Camiguin Katigbasaw Falls',3),
-(13,'/Images/Destinations/Bohol/attraction_camiguinMantigueIsland.jpg','Camiguin Matigue Island','Camiguin Matigue Island',4),
-(13,'/Images/Destinations/Bohol/attraction_camiguinpond.jpg','Camiguin Pond','Camiguin Pond',5);
+(13,'/Images/Destinations/Camiguin/attraction_camiguinCross.jpg','Camiguin Cross','Camiguin Cross',1),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinColdSpring.jpg','Camiguin Cold Spring','Camiguin Cold Spring',2),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinKatigbasawFalls.jpg','Camiguin Katigbasaw Falls','Camiguin Katigbasaw Falls',3),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinMantigueIsland.jpg','Camiguin Matigue Island','Camiguin Matigue Island',4),
+(13,'/Images/Destinations/Camiguin/attraction_camiguinpond.jpg','Camiguin Pond','Camiguin Pond',5);
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), -- Davao
 (1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages 
-(2,6),(2,7),(2,8),(2,9),(2,10),(2,11); -- bohol add on products
-(3,13); -- Camiguin Tour Package
+(2,6),(2,7),(2,8),(2,9),(2,10),(2,11), -- bohol add on products
+(1,13); -- Camiguin Tour Package
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);

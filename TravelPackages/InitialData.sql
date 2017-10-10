@@ -23,9 +23,9 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Dumaluan Beach Resort - Panglao','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_Dumaluan_beach-resort-09.jpg',7,2),
 ('Bohol Beach Club - Panglao, Bohol','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_bohol_beachclub_02.jpg',4,2),
 ('Island Hopping','Dolphin and whale watching, Island Hopping (Balicasag and Virgin Island)','BoholPackages/IslandHopping','/Images/Destinations/Bohol/Attraction_BoholIslandHopping.png',3,2),
-('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3);
-('White Water Rafting - Davao','Water Rafting','DavaoPackages/WaterRafting','/Images/Destinations/Davao/DavaoWaterRafting.jpg',3,1);
-('Samal Inland Tour','Beach and Resorts','DavaoPackages/SamalTour','/Images/Destinations/Davao/DavaoWaterRafting.jpg',4,1);
+('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3),
+('White Water Rafting - Davao','Water Rafting','DavaoPackages/WaterRafting','/Images/Destinations/Davao/DavaoWaterRafting.jpg',3,1),
+('Samal Inland Tour','Beach and Resorts','DavaoPackages/SamalTour','/Images/Destinations/Davao/DavaoWaterRafting.jpg',4,1),
 ('Seagull Mountain Resort','Resort and Accommodation','DavaoPackages/SeagullMtResort','/Images/Destinations/Davao/Buda_seagullResortView2.jpg',5,1);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
@@ -204,7 +204,7 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (13,'','','Exclusions (available upon request)',4),
 (13,'','','Airfare, Tour guide, Meals and Accommodation',5),
 (13,'','','- Gui-ob Church',6),
-(13,'','','- Sto. Niño Cold Spring',7));
+(13,'','','- Sto. Niño Cold Spring',7);
 
 
 Insert into tpKeywords([Keyword],[tpProductsId]) values

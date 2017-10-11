@@ -4,13 +4,13 @@
 Insert into tpUoms([Measure],[Remarks]) values
 ('Unit','Per unit ( Room, Car, Boat)'),('Pax','per person rate');
 
-Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values 
+Insert into tpAreas([Name],[PageRemarks],[PageView],[PgFeatureImg],[Sort]) values
 ('DAVAO','Davao City','DavaoPage','/Images/abreeza-mall.gif',1),
 ('BOHOL','One of the most popular travel and vacation destination in Philippines. Great Tour packages awaits!','BoholPage','/Images/Bohol101.png',2),
 ('CAMIGUIN','Northern Mindanao','CamiguinPage','/Images/SamalIslandHopping.png',3);
 
 
-Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values 
+Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort], [tpAreasId]) values
 ('City Tour','City Tour','ProductDefaultView','/Images/abreeza-mall.gif',1,1),
 ('Country Side Tour','Country Side Tour','ProductDefaultView','/Images/CountrySide.gif',2,1),
 ('Country Side Tour','7 - 9 hrs tour across the island of Bohol. Passing thru is cultural destinations and fascinating views of the main island','BoholPackages/CountrySide','/Images/Destinations/Bohol/CountrySideTour.png',1,2),
@@ -26,7 +26,8 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('Camiguin Tour Package','Tour Package','CamiguinPackages/CamiguinTour','/Images/Destinations/Camiguin/CamiguinTourPackageDefault.jpg',1,3),
 ('White Water Rafting - Davao','Water Rafting','DavaoPackages/WaterRafting','/Images/Destinations/Davao/DavaoWaterRafting.jpg',3,1),
 ('Samal Inland Tour','Beach and Resorts','DavaoPackages/SamalTour','/Images/Destinations/Davao/DavaoWaterRafting.jpg',4,1),
-('Seagull Mountain Resort','Resort and Accommodation','DavaoPackages/SeagullMtResort','/Images/Destinations/Davao/Buda_seagullResortView2.jpg',5,1);
+('Seagull Mountain Resort','Resort and Accommodation','DavaoPackages/SeagullMtResort','/Images/Destinations/Camiguin/Camiguin-Highland-Resort.jpg',5,1),
+('Camiguin Highland Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',2,3);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -141,14 +142,16 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (15,'/Images/Destinations/Davao/Buda_seagullResortView1.jpg','Seagull Resort View','Seagull Resort View',2),
 (15,'/Images/Destinations/Davao/Buda_seagullResortHouse.jpg','Seagull Resort Cottage','Seagull Resort Cottage',3),
 (15,'/Images/Destinations/Davao/Buda_mountainOverlooking.jpg','Buda Mountains Overlooking','Buda Mountains Overlooking',4),
-(15,'/Images/Destinations/Davao/Buda_seagullResortWaterfalls.jpg','Buda Seagull Waterfalls','Buda Seagull Waterfalls',5);
+(15,'/Images/Destinations/Davao/Buda_seagullResortWaterfalls.jpg','Buda Seagull Waterfalls','Buda Seagull Waterfalls',5),
+-- Samal Inland Tour - Tour PAckage --
+(17,'/Images/Destinations/Camiguin/Camiguin-Highland-Resort.jpg','Highland Resort','Highland Resort',1);
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), (1,14), (1,15), (1,16), -- Davao
-(1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages 
+(1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages
 (2,6),(2,7),(2,8),(2,9),(2,10),(2,11), -- bohol add on products
-(1,13); -- Camiguin Tour Package
+(1,13),(1,17); -- Camiguin Tour Package
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);
@@ -204,7 +207,15 @@ Insert into tpProductDescs([tpProductsId],[tpDescH1],[tpDescH2], [tpDesc],[Sort]
 (13,'','','Exclusions (available upon request)',4),
 (13,'','','Airfare, Tour guide, Meals and Accommodation',5),
 (13,'','','- Gui-ob Church',6),
-(13,'','','- Sto. Niño Cold Spring',7);
+(13,'','','- Sto. Niño Cold Spring',7),
+
+-- Camiguin Highlands Resort --
+(17,'Camiguin Highland Resort','2 Star Hotel','',1),
+(17,'','',' Room Rate - 2,232php',2),
+(17,'','',' Free Parking',3),
+(17,'','',' Pool',4),
+(17,'','',' Free Internet',5),
+(17,'','',' Restaurant -',6);
 
 
 Insert into tpKeywords([Keyword],[tpProductsId]) values
@@ -221,7 +232,8 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Camiguin','13'),('Tour','13'),('Travel','13'),('Vacation','13'),('Package','13'),
 ('Davao','14'),('Tour','14'),('Water','14'),('Vacation','14'),('Rafting','14'),
 ('Davao','15'),('Tour','15'),('Samal','15'),('Vacation','15'),('Package','15'),
-('Davao','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16');
+('Davao','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16'),
+('Camiguin','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16');
 
 
 Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values

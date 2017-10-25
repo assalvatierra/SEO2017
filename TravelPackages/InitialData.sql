@@ -27,7 +27,14 @@ Insert into [tpProducts]([Name],[ShortRemarks],[PageView],[PgFeatureImg], [Sort]
 ('White Water Rafting - Davao','Water Rafting','DavaoPackages/WaterRafting','/Images/Destinations/Davao/DavaoWaterRafting.jpg',3,1),
 ('Samal Inland Tour','Beach and Resorts','DavaoPackages/SamalTour','/Images/Destinations/Davao/DavaoWaterRafting.jpg',4,1),
 ('Seagull Mountain Resort','Resort and Accommodation','DavaoPackages/SeagullMtResort','/Images/Destinations/Camiguin/Camiguin-Highland-Resort.jpg',5,1),
-('Camiguin Highland Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',2,3);
+('Camiguin Highland Resort','Resort and Accommodation','ProductDefaultView','/Images/Destinations/Bohol/accom_southpalmresort_08.jpg',2,3),
+-- 10/24/17 ---
+('Cabua-an Beach Resort','Resort and Accommodation','CamiguinPackages/CabuaanResort','/Images/Destinations/Camiguin/HotelResorts/Cabua-an/cabua-an-resortpool.png',3,3),
+('Ardent Hibok-Beach Spring Resort','Resort and Accommodation','CamiguinPackages/ArdentResort','/Images/Destinations/Camiguin/HotelResorts/Ardent/ardentHibokSpring.png',4,3),
+('Bahay Bakasyunan Sa Camiguin','Resort and Accommodation','CamiguinPackages/BahayBakasyunan','/Images/Destinations/Camiguin/HotelResorts/BahaiBakasyunan/bakasyunanrooms2.png',5,3),
+('Paras Beach Resort','Resort and Accommodation','CamiguinPackages/ParasResort','/Images/Destinations/Camiguin/HotelResorts/ParasBeach/ParasBeach.png',6,3),
+('Caves Dive Resort','Resort and Accommodation','CamiguinPackages/CavesDiveResort','/Images/Destinations/Camiguin/HotelResorts/CavesDiveResort/CavesDvinResort.png',7,3),
+('Ysa Beach Camp Eco Resort','Resort and Accommodation','CamiguinPackages/YsaResort','/Images/Destinations/Camiguin/HotelResorts/YsaBeachCamp/YsaBeachCampPool.jpg',8,3);
 
 Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort]) values
 -- Bohol -CountrySide tour --
@@ -144,14 +151,39 @@ Insert into [tpProductImages]([tpProductsId], [ImgPath],[Desc],[AltName],[Sort])
 (15,'/Images/Destinations/Davao/Buda_mountainOverlooking.jpg','Buda Mountains Overlooking','Buda Mountains Overlooking',4),
 (15,'/Images/Destinations/Davao/Buda_seagullResortWaterfalls.jpg','Buda Seagull Waterfalls','Buda Seagull Waterfalls',5),
 -- Samal Inland Tour - Tour PAckage --
-(17,'/Images/Destinations/Camiguin/Camiguin-Highland-Resort.jpg','Highland Resort','Highland Resort',1);
+(17,'/Images/Destinations/Camiguin/Camiguin-Highland-Resort.jpg','Highland Resort','Highland Resort',1),
+-- Cabua-an Hotel Resort --
+(18,'/Images/Destinations/Camiguin/HotelResorts/Cabua-an/cabua-an-resortpool.png','Cabua-an Resort Pool',1),
+(18,'/Images/Destinations/Camiguin/HotelResorts/Cabua-an/cabua-an resort.png','Cabua-an Resort View',2),
+(18,'/Images/Destinations/Camiguin/HotelResorts/Cabua-an/cabua-an resortrooms.png','Cabua-an Resort Rooms',3),
+-- Ardent Hibok-Hibok Hotel Resort --
+(19,'/Images/Destinations/Camiguin/HotelResorts/Ardent/ArdentHibokRoom.png','Ardent Hibok-Hibok Cottage',1),
+(19,'/Images/Destinations/Camiguin/HotelResorts/Ardent/ArdentHibokSignage.png','Ardent Hibok-Hibok Signage',2),
+(19,'/Images/Destinations/Camiguin/HotelResorts/Ardent/ardentHibokSpring.png','Ardent Hibok-Hibok Spring',3),
+-- Bahay Bakasyunan Hotel Resort --
+(20,'/Images/Destinations/Camiguin/HotelResorts/BahaiBakasyunan/bahaibakasyonan.png','Bakasyunan Cottage',1),
+(20,'/Images/Destinations/Camiguin/HotelResorts/BahaiBakasyunan/bakasyunanrooms.png','Bakasyunan Rooms',2),
+(20,'/Images/Destinations/Camiguin/HotelResorts/BahaiBakasyunan/bakasyunanrooms2.png','Bakasyunan Night',3),
+-- Paras Beach Hotel Resort --
+(21,'/Images/Destinations/Camiguin/HotelResorts/ParasBeach/ParasBeach.png','Paras Pool View',1),
+(21,'/Images/Destinations/Camiguin/HotelResorts/ParasBeach/parasrooms.png','Paras Rooms',2),
+(21,'/Images/Destinations/Camiguin/HotelResorts/ParasBeach/parasroom2.png','Paras Rooms',3),
+-- Paras Beach Hotel Resort --
+(22,'/Images/Destinations/Camiguin/HotelResorts/CavesDiveResort/CavesDvinResort.png','Caves Dive Resort',1),
+(22,'/Images/Destinations/Camiguin/HotelResorts/CavesDiveResort/CavesDvinResort2.png','Caves Dive Resort2',2),
+(22,'/Images/Destinations/Camiguin/HotelResorts/CavesDiveResort/CavesRestaurant.png','Caves Restaurant',3),
+-- Paras Beach Hotel Resort --
+(23,'/Images/Destinations/Camiguin/HotelResorts/YsaBeachCamp/YsaBeachCampPool.jpg','Ysa Beach Camp Pool',1),
+(23,'/Images/Destinations/Camiguin/HotelResorts/YsaBeachCampYsaBeachCamp/YsaBeachCampResort.jpg','Ysa Beach Camp Resort',2),
+(23,'/Images/Destinations/Camiguin/HotelResorts/YsaBeachCamp/YsaCampTent.jpg','Ysa Camp Tent',3);
 
 
 Insert into tpProdCats([tpCategoryId],[tpProductsId]) values
 (1,1),(1,2), (1,14), (1,15), (1,16), -- Davao
 (1,3),(1,4),(1,5),(1,12), -- Bohol - Featured - Tour Packages
 (2,6),(2,7),(2,8),(2,9),(2,10),(2,11), -- bohol add on products
-(1,13),(1,17); -- Camiguin Tour Package
+(1,13),(1,17),(1,18),(1,19),(1,20),  -- Camiguin Tour Package
+(1,21),(1,22),(1,23);     -- Camiguin add on products
 
 Insert into tpProdRates([tpProductsId],[tpUomId],[GroupOf],[Rate],[Remarks],[Sort]) values
 (3,2,1,4250,'',1),(3,2,2,2600,'',1),(3,2,3,2100,'',1),(3,2,4,1950,'',1),(3,2,5,1800,'',1),(3,2,6,1700,'',1),(3,2,7,1600,'',1),(3,2,8,1550,'',1),(3,2,9,1450,'',1),(3,2,10,1350,'',1);
@@ -233,7 +265,13 @@ Insert into tpKeywords([Keyword],[tpProductsId]) values
 ('Davao','14'),('Tour','14'),('Water','14'),('Vacation','14'),('Rafting','14'),
 ('Davao','15'),('Tour','15'),('Samal','15'),('Vacation','15'),('Package','15'),
 ('Davao','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16'),
-('Camiguin','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16');
+('Camiguin','16'),('Tour','16'),('Travel','16'),('Vacation','16'),('Package','16'),
+('Camiguin','18'),('Hotel','18'),('Resort','18'),('Vacation','18'),('Package','18'),
+('Camiguin','19'),('Hotel','19'),('Resort','19'),('Vacation','19'),('Package','19'),
+('Camiguin','20'),('Hotel','20'),('Resort','20'),('Vacation','20'),('Package','20'),
+('Camiguin','21'),('Hotel','21'),('Resort','21'),('Vacation','21'),('Package','21'),
+('Camiguin','22'),('Hotel','22'),('Resort','22'),('Vacation','22'),('Package','22'),
+('Camiguin','23'),('Hotel','23'),('Resort','23'),('Vacation','23'),('Package','23');
 
 
 Insert into tpBacklinks([LinkType],[LinkUrl],[Description],[LinkExpiry],[Status]) values

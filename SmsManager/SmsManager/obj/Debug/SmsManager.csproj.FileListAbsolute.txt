@@ -1,0 +1,30 @@
+c:\users\ching25\documents\visual studio 2015\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.exe.config
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.exe
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.pdb
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csprojResolveAssemblyReference.cache
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Form1.resources
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Properties.Resources.resources
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csproj.GenerateResource.Cache
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.exe
+C:\Users\CHING25\Documents\Visual Studio 2015\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.pdb
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.exe.config
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.exe
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.pdb
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.exe
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\SmsManager.pdb
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\GSMCommServer.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\GSMCommShared.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\GSMCommunication.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\PDUConverter.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.xml
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csprojResolveAssemblyReference.cache
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Form1.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Properties.Resources.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csproj.GenerateResource.Cache
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormInbox.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormOverview.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormSettings.resources

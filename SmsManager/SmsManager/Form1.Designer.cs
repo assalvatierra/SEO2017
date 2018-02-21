@@ -40,6 +40,7 @@
             this.OverviewFlatButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LogsFlatButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SettingsFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.newNotifFlatButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -125,7 +126,7 @@
             // 
             // OverviewFlatButton
             // 
-            this.OverviewFlatButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.OverviewFlatButton.Activecolor = System.Drawing.Color.Teal;
             this.OverviewFlatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
             this.OverviewFlatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.OverviewFlatButton.BorderRadius = 0;
@@ -147,7 +148,7 @@
             this.OverviewFlatButton.Location = new System.Drawing.Point(-1, 79);
             this.OverviewFlatButton.Name = "OverviewFlatButton";
             this.OverviewFlatButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
-            this.OverviewFlatButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.OverviewFlatButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.OverviewFlatButton.OnHoverTextColor = System.Drawing.Color.White;
             this.OverviewFlatButton.selected = false;
             this.OverviewFlatButton.Size = new System.Drawing.Size(241, 51);
@@ -160,7 +161,7 @@
             // 
             // LogsFlatButton
             // 
-            this.LogsFlatButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.LogsFlatButton.Activecolor = System.Drawing.Color.Teal;
             this.LogsFlatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
             this.LogsFlatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LogsFlatButton.BorderRadius = 0;
@@ -182,7 +183,7 @@
             this.LogsFlatButton.Location = new System.Drawing.Point(-1, 138);
             this.LogsFlatButton.Name = "LogsFlatButton";
             this.LogsFlatButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
-            this.LogsFlatButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.LogsFlatButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.LogsFlatButton.OnHoverTextColor = System.Drawing.Color.White;
             this.LogsFlatButton.selected = false;
             this.LogsFlatButton.Size = new System.Drawing.Size(241, 51);
@@ -195,7 +196,7 @@
             // 
             // SettingsFlatButton2
             // 
-            this.SettingsFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.SettingsFlatButton2.Activecolor = System.Drawing.Color.Teal;
             this.SettingsFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
             this.SettingsFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsFlatButton2.BorderRadius = 0;
@@ -214,10 +215,10 @@
             this.SettingsFlatButton2.IconVisible = true;
             this.SettingsFlatButton2.IconZoom = 90D;
             this.SettingsFlatButton2.IsTab = false;
-            this.SettingsFlatButton2.Location = new System.Drawing.Point(-1, 199);
+            this.SettingsFlatButton2.Location = new System.Drawing.Point(-1, 252);
             this.SettingsFlatButton2.Name = "SettingsFlatButton2";
             this.SettingsFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
-            this.SettingsFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.SettingsFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.SettingsFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
             this.SettingsFlatButton2.selected = false;
             this.SettingsFlatButton2.Size = new System.Drawing.Size(241, 51);
@@ -227,6 +228,41 @@
             this.SettingsFlatButton2.Textcolor = System.Drawing.Color.White;
             this.SettingsFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SettingsFlatButton2.Click += new System.EventHandler(this.SettingsFlatButton2_Click);
+            // 
+            // newNotifFlatButton
+            // 
+            this.newNotifFlatButton.Activecolor = System.Drawing.Color.Teal;
+            this.newNotifFlatButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
+            this.newNotifFlatButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.newNotifFlatButton.BorderRadius = 0;
+            this.newNotifFlatButton.ButtonText = "New Message";
+            this.newNotifFlatButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.newNotifFlatButton.DisabledColor = System.Drawing.Color.Gray;
+            this.newNotifFlatButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.newNotifFlatButton.Iconimage = global::SmsManager.Properties.Resources.SMS_64px;
+            this.newNotifFlatButton.Iconimage_right = null;
+            this.newNotifFlatButton.Iconimage_right_Selected = null;
+            this.newNotifFlatButton.Iconimage_Selected = null;
+            this.newNotifFlatButton.IconMarginLeft = 0;
+            this.newNotifFlatButton.IconMarginRight = 0;
+            this.newNotifFlatButton.IconRightVisible = true;
+            this.newNotifFlatButton.IconRightZoom = 0D;
+            this.newNotifFlatButton.IconVisible = true;
+            this.newNotifFlatButton.IconZoom = 90D;
+            this.newNotifFlatButton.IsTab = false;
+            this.newNotifFlatButton.Location = new System.Drawing.Point(-1, 195);
+            this.newNotifFlatButton.Name = "newNotifFlatButton";
+            this.newNotifFlatButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(88)))));
+            this.newNotifFlatButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.newNotifFlatButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.newNotifFlatButton.selected = false;
+            this.newNotifFlatButton.Size = new System.Drawing.Size(144, 51);
+            this.newNotifFlatButton.TabIndex = 24;
+            this.newNotifFlatButton.Text = "New Message";
+            this.newNotifFlatButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.newNotifFlatButton.Textcolor = System.Drawing.Color.White;
+            this.newNotifFlatButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newNotifFlatButton.Click += new System.EventHandler(this.newNotifFlatButton_Click);
             // 
             // Form1
             // 
@@ -239,6 +275,7 @@
             this.Controls.Add(this.OverviewFlatButton);
             this.Controls.Add(this.LogsFlatButton);
             this.Controls.Add(this.SettingsFlatButton2);
+            this.Controls.Add(this.newNotifFlatButton);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
@@ -263,6 +300,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton OverviewFlatButton;
         private Bunifu.Framework.UI.BunifuFlatButton SettingsFlatButton2;
         private Bunifu.Framework.UI.BunifuFlatButton LogsFlatButton;
+        private Bunifu.Framework.UI.BunifuFlatButton newNotifFlatButton;
     }
 }
 

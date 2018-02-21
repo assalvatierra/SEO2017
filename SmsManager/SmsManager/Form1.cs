@@ -25,6 +25,7 @@ namespace SmsManager
         public FormOverview OverviewView = new FormOverview();
         public FormInbox InboxView = new FormInbox();
         public FormSettings Settingsview = new FormSettings();
+        public FormNewNotif NewNotifView = new FormNewNotif();
 
         public Form1()
         {
@@ -67,6 +68,7 @@ namespace SmsManager
 
             InboxView.Hide();
             Settingsview.Hide();
+            NewNotifView.Hide();
         }
 
         private void LogsFlatButton_Click(object sender, EventArgs e)
@@ -79,6 +81,7 @@ namespace SmsManager
 
             OverviewView.Hide();
             Settingsview.Hide();
+            NewNotifView.Hide();
         }
 
         private void SettingsFlatButton2_Click(object sender, EventArgs e)
@@ -91,11 +94,25 @@ namespace SmsManager
 
             InboxView.Hide();
             OverviewView.Hide();
+            NewNotifView.Hide();
         }
 
         private void UpdateButton_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void newNotifFlatButton_Click(object sender, EventArgs e)
+        {
+            NewNotifView.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            NewNotifView.TopLevel = false;
+            NewNotifView.AutoScroll = true;
+            panel1.Controls.Add(NewNotifView);
+            NewNotifView.Show();
+
+            OverviewView.Hide();
+            InboxView.Hide();
+            Settingsview.Hide();
         }
     }//end of class
 }

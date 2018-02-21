@@ -22,6 +22,7 @@ namespace SmsManager
 
         void ServerUpdate(string NotificationID, string sentdatetime);
         void SetActivityLog(string NotificationID, string status, string remarks);
+        void setNewNotification(string type, string recipient, string message, string dtSending);
         void SetRefreshTime(int timeSec);
 
     }
@@ -70,7 +71,7 @@ namespace SmsManager
         //get sending list from the database using JSON 
         public DataTable GetListing() {
 
-            Console.WriteLine("TESTING GETLISTING");
+            Console.WriteLine("GET LISTING");
             return webData.Getcontent("http://localhost:63556/SmsService.asmx/getList");
             
         }
@@ -78,9 +79,8 @@ namespace SmsManager
         //get sending details, message 
         public DataTable GetDetails(string notificationID) {
 
+            Console.WriteLine("GET DETAILS");
             return webData.Getcontent("http://localhost:63556/SmsService.asmx/getDetails");
-
-            //string url = "http://localhost:63556/SmsService.asmx/getDetails";
             
         }
 
@@ -164,6 +164,21 @@ namespace SmsManager
 
             Console.WriteLine("logs update " + responseInString );
 
+        }
+
+        public void setNewNotification(string type, string recipient, string message,string dtSending)
+        {
+            string url = "http://localhost:63556/SmsService.asmx/addNotification";
+
+            var data = new NameValueCollection();
+            data["recType"] = type;
+            data["dtSending"] = dtSending;
+            data["message"] = message;
+            data["recipient"] = recipient;
+            //string responseInString = webData.sendPOSTData(url, "1", "2/16/2018", "sent", "none");
+            string responseInString = webData.sendMsgData(url, data);
+
+            Console.WriteLine("logs update " + responseInString);
         }
 
 

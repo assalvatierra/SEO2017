@@ -20,11 +20,13 @@ C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\GSMCommunicati
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.dll
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\PDUConverter.dll
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Newtonsoft.Json.xml
-C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csprojResolveAssemblyReference.cache
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Form1.resources
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Properties.Resources.resources
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csproj.GenerateResource.Cache
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormInbox.resources
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormOverview.resources
-C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Bunifu_UI_v1.5.3.dll
 C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormSettings.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\bin\Debug\Bunifu_UI_v1.52.dll
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.Controls.UnsentMessageControl.resources
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.csprojResolveAssemblyReference.cache
+C:\Users\VILLOSA\Desktop\Projects\SmsManager\SmsManager\obj\Debug\SmsManager.FormNewNotif.resources

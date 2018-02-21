@@ -27,6 +27,7 @@ namespace SmsManager
             LabSys = SMS.GetSystem("Laboratory");
             DataTable MessageList = LabSys.GetListing();
             dataGridView1.DataSource = MessageList;
+            //bunifuCustomDataGrid1.DataSource = MessageList;
         }
     }
 }

@@ -33,8 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    <Reference Include="Bunifu_UI_v1.52, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\Visual Studio 2015\Frameworks\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
     <Reference Include="GSMCommServer">
       <HintPath>..\..\..\..\Downloads\Visual Studio libraries\GSM\GSMCommServer.dll</HintPath>
@@ -67,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\UnsentMessageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UnsentMessageControl.Designer.cs">
+      <DependentUpon>UnsentMessageControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +85,12 @@
     </Compile>
     <Compile Include="FormInbox.Designer.cs">
       <DependentUpon>FormInbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewNotif.Designer.cs">
+      <DependentUpon>FormNewNotif.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOverview.cs">
       <SubType>Form</SubType>
@@ -96,11 +109,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SmsSender.cs" />
+    <EmbeddedResource Include="Controls\UnsentMessageControl.resx">
+      <DependentUpon>UnsentMessageControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormInbox.resx">
       <DependentUpon>FormInbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewNotif.resx">
+      <DependentUpon>FormNewNotif.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOverview.resx">
       <DependentUpon>FormOverview.cs</DependentUpon>
@@ -143,6 +162,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Settings_48px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Message_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -73,6 +73,16 @@ namespace SmsManager.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap New_Message_64px {
+            get {
+                object obj = ResourceManager.GetObject("New Message_64px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Settings_48px {
             get {
                 object obj = ResourceManager.GetObject("Settings_48px", resourceCulture);

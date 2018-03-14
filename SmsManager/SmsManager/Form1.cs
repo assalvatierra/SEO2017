@@ -34,6 +34,8 @@ namespace SmsManager
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            Connection.url = "http://localhost:63556/SmsService.asmx/";
+
             LabSys = SMS.GetSystem("Laboratory");
 
             OverviewView.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -97,11 +99,6 @@ namespace SmsManager
             NewNotifView.Hide();
         }
 
-        private void UpdateButton_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void newNotifFlatButton_Click(object sender, EventArgs e)
         {
             NewNotifView.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -113,6 +110,30 @@ namespace SmsManager
             OverviewView.Hide();
             InboxView.Hide();
             Settingsview.Hide();
+        }
+
+        private void UpdateButton_Click_1(object sender, EventArgs e)
+        {
+            //if (FormWindowState.Minimized == this.WindowState)
+            //{
+
+                notifyIcon1.Visible = true;
+               // notifyIcon1.ShowBalloonTip(500);
+                this.Hide();
+            //}
+
+            //else if (FormWindowState.Normal == this.WindowState)
+            //{
+            //    notifyIcon1.Visible = false;
+            //}
+        }
+
+        private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            ShowInTaskbar = true;
+            notifyIcon1.Visible = false;
+            WindowState = FormWindowState.Normal;
         }
     }//end of class
 }

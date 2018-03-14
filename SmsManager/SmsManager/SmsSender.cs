@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Data;
@@ -15,13 +16,16 @@ namespace SmsManager
         //SMS Sender Methods
         DataTable GetListing();
         DataTable GetUnsentItems();
-        DataTable GetDetails(string notificationID);
+        DataTable GetDetails();
+        DataTable GetRecipientsList(int NotificationId);
+        DataTable FailedItems();
+        DataTable GetLogByRecipientIdList_Failed(int notificationRecipientID);
 
         string SendSMS(string Recipient, string Message);
         void SendAdminNotif(SmsSender adminList);
 
         void ServerUpdate(string NotificationID, string sentdatetime);
-        void SetActivityLog(string NotificationID, string status, string remarks);
+        void updateActivityLog(string NotificationID, string status, string remarks);
         void setNewNotification(string type, string recipient, string message, string dtSending);
         void SetRefreshTime(int timeSec);
 
@@ -67,20 +71,24 @@ namespace SmsManager
     //SMS Sender Methods
     public class LabSys : ISMSSender
     {
+        private string localhost = Connection.url;
+        private string URL = "http://lis-2.apphb.com/SmsService.asmx/";
+
         JsonHandler webData = new JsonHandler();
+
         //get sending list from the database using JSON 
         public DataTable GetListing() {
 
             Console.WriteLine("GET LISTING");
-            return webData.Getcontent("http://localhost:63556/SmsService.asmx/getList");
+            return webData.Getcontent(localhost + "getLogsList");
             
         }
 
         //get sending details, message 
-        public DataTable GetDetails(string notificationID) {
+        public DataTable GetDetails() {
 
             Console.WriteLine("GET DETAILS");
-            return webData.Getcontent("http://localhost:63556/SmsService.asmx/getDetails");
+            return webData.Getcontent(localhost + "getDetails");
             
         }
 
@@ -88,18 +96,52 @@ namespace SmsManager
         //get sending details, message 
         public DataTable GetUnsentItems()
         {
-
-            return webData.Getcontent("http://localhost:63556/SmsService.asmx/getUnsentItems");
-            
-
+            return webData.Getcontent(localhost + "getUnsentItems");
         }
 
+
+        //get sending details, message 
+        public DataTable FailedItems()
+        {
+            return webData.Getcontent(localhost + "getFailedItems");
+        }
+
+
+
+        public DataTable GetRecipientsList(int notificationID)
+        {
+
+            string url = localhost + "updateLog";
+
+            var data = new NameValueCollection();
+            data["NotificationID"] = notificationID.ToString();
+
+            var json = webData.sendMsgData(localhost + "getRecipientsLists", data);
+                
+            return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+        }
+        
+        public DataTable GetLogByRecipientIdList_Failed(string notificationRecipientID)
+        {
+
+            string url = localhost + "updateLog";
+
+            var data = new NameValueCollection();
+            data["notificationRecipientID"] = notificationRecipientID.ToString();
+
+            var json = webData.sendMsgData(localhost + "getRecipientsLists_Failed", data);
+
+            return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+        }
+        
         //send sms 
         public string SendSMS(string Recipient, string Message) {
             GSM GSMBot = new GSM();
             string messageStatus = "";
-            Recipient = "639279016517"; //format (63 + number ex. 639279016517)
-            Message = "c# text test :" + DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
+
+            //test values
+            //Recipient = "639279016517"; //format (63 + number ex. 639279016517)
+            // Message = "c# text test :" + DateTime.Today.ToShortDateString() + " " + DateTime.Now.ToShortTimeString();
 
             Console.WriteLine("CONNECTING TO COM10");
             if (GSMBot.PortConnect("COM14"))
@@ -136,26 +178,26 @@ namespace SmsManager
         public void ServerUpdate(string notificationID, string sentdatetime)
         {
            
-            string url = "http://localhost:63556/SmsService.asmx/updateItemStatus";
+            //string url = localhost + "updateItemStatus";
 
-            var data = new NameValueCollection();
-            data["NotificationID"] = notificationID.ToString();
-            data["DtSending"] = DateTime.Now.ToString();
+            //var data = new NameValueCollection();
+            //data["NotificationID"] = notificationID.ToString();
+            //data["DtSending"] = DateTime.Now.ToString();
 
-            Console.WriteLine("DATETIME: "+DateTime.Now.ToString());
-            string responseInString = webData.sendMsgData(url, data);
+            //Console.WriteLine("DATETIME: "+DateTime.Now.ToString());
+            //string responseInString = webData.sendMsgData(url, data);
 
-            Console.WriteLine("notifications update " + responseInString);
+            //Console.WriteLine("notifications update " + responseInString);
         }
 
         //update notifications
-        public void SetActivityLog(string notificationID, string status, string remarks)
+        public void updateActivityLog(string NotificationRecipientID, string status, string remarks)
         {
             
-            string url = "http://localhost:63556/SmsService.asmx/updateLog";
+            string url = localhost + "updateLog";
 
             var data = new NameValueCollection();
-            data["NotificationID"] = notificationID.ToString();
+            data["NotificationRecipientID"] = NotificationRecipientID.ToString();
             data["DtSending"] = DateTime.Now.ToString();
             data["Status"] = status;
             data["Remarks"] = remarks;
@@ -168,7 +210,7 @@ namespace SmsManager
 
         public void setNewNotification(string type, string recipient, string message,string dtSending)
         {
-            string url = "http://localhost:63556/SmsService.asmx/addNotification";
+            string url = localhost + "addNotification";
 
             var data = new NameValueCollection();
             data["recType"] = type;
@@ -186,6 +228,8 @@ namespace SmsManager
         {
 
         }
+
+
 
     }
 

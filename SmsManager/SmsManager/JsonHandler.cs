@@ -65,9 +65,10 @@ namespace SmsManager
                 //for json list
                 //Console.WriteLine(json);
                 DataSet dataset = JsonConvert.DeserializeObject<DataSet>(json);
+
                 DataTable dataTable = dataset.Tables["Table"];
 
-                //display result in console
+                ////display result in console
                 //Console.WriteLine(dataTable.Rows.Count);
                 //foreach (DataRow row in dataTable.Rows)
                 //{
@@ -76,8 +77,8 @@ namespace SmsManager
                 //    Console.WriteLine(row["Recipient"]);
                 //    Console.WriteLine(row["Message"]);
                 //    Console.WriteLine(row["DTSending"]);
-                //    Console.WriteLine(row["RefId"]);
-                //    Console.WriteLine(row["RefTable"]);
+                //    //Console.WriteLine(row["RefId"]);
+                //    //Console.WriteLine(row["RefTable"]);
 
                 //}
 
@@ -99,6 +100,7 @@ namespace SmsManager
                 try
                 {
                     var response = wb.UploadValues(Url, "POST", Data);
+
                     responseInString = Encoding.UTF8.GetString(response);
                     //Console.WriteLine(responseInString);
                     
@@ -111,7 +113,37 @@ namespace SmsManager
                 }
             }
             return responseInString;
+        }
 
+
+        public DataTable POSTData(string Url, NameValueCollection Data)
+        {
+            DataTable dataTable = null ;
+            string responseInString = "";
+            using (var wb = new WebClient())
+            {
+                try
+                {
+                    var response = wb.UploadValues(Url, "POST", Data);
+
+
+                    string json = System.Text.Encoding.UTF8.GetString(response);
+
+
+                    DataSet dataset = JsonConvert.DeserializeObject<DataSet>(json);
+
+                     dataTable = dataset.Tables["Table"];
+                    //Console.WriteLine(responseInString);
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+            return dataTable;
         }
 
     }

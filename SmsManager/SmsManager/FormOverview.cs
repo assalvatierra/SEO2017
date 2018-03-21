@@ -55,7 +55,7 @@ namespace SmsManager
                 string DTSending = row["DTSending"].ToString();
                 string message = row["Message"].ToString();
 
-                dataGridView1.Rows.Add(DTSending, RecType, message);
+                dataGridView1.Rows.Add(notificationID, DTSending, RecType, message);
 
             }
             
@@ -73,6 +73,7 @@ namespace SmsManager
             string message = "";
             string notificationRecipientID = "";
             string sendingDate = "";
+            string notificationID = "";
 
             DateTime date1;
             string sentDate = DateTime.Now.ToString();
@@ -83,7 +84,6 @@ namespace SmsManager
             //get list of new messages
             LabSys = SMS.GetSystem("Laboratory");
             DataTable MessageList = LabSys.GetUnsentItems();
-            DataTable FailedList = LabSys.FailedItems();
             //dataGridView2.DataSource = MessageList;
 
             try
@@ -91,16 +91,16 @@ namespace SmsManager
 
                 //convert datasource to list
                 List<DataRow> Messagelist = MessageList.AsEnumerable().ToList();
-                List<DataRow> Failedlist = FailedList.AsEnumerable().ToList();
 
                 foreach (DataRow row in MessageList.Rows)
                 {
                     notificationRecipientID = row["Id"].ToString();
+                    notificationID = row["Id"].ToString();
                     recipient = row["ContactInfo"].ToString();
                     message = row["Message"].ToString();
                     sendingDate = row["DTSending"].ToString();
 
-                    dataGridView2.Rows.Add(sendingDate,recipient,message);
+                    dataGridView2.Rows.Add(sendingDate, notificationID,  recipient, message);
 
 
                     //get date and time today
@@ -109,7 +109,7 @@ namespace SmsManager
                     if (date1 <= DateTime.Now)
                     {
                         Console.WriteLine(date1 + " - DATE TIME LESS THAN TODAY - ACTION SEND AND LOG");
-                       // messageStatus = LabSys.SendSMS(recipient, message); //uncomment to enable sending
+                        // messageStatus = LabSys.SendSMS(recipient, message); //uncomment to enable sending
                         //inset new activity log
                         //LabSys.updateActivityLog(notificationRecipientID, messageStatus, "none");
                         // update activity log
@@ -121,19 +121,24 @@ namespace SmsManager
 
                 }
 
+
+                DataTable FailedList = LabSys.FailedItems();
+
+                List<DataRow> Failedlist = FailedList.AsEnumerable().ToList();
                 Console.WriteLine("GETTING FAILED LISTS");
                 foreach (DataRow row in FailedList.Rows)
                 {
                     notificationRecipientID = row["Id"].ToString();
+                    notificationID = row["NotificationId"].ToString();
                     recipient = row["ContactInfo"].ToString();
                     message = row["Message"].ToString();
                     sendingDate = row["DTSending"].ToString();
-                    
-                    dataGridView2.Rows.Add(sendingDate, recipient, message);
+
+                    dataGridView2.Rows.Add(sendingDate, notificationID, recipient, message);
                     Console.WriteLine(notificationRecipientID);
 
                     //check multiple entries on recipientID
-                    DataTable FailedListID = LabSys.GetLogByRecipientIdList_Failed(int.Parse(notificationRecipientID));
+                    //DataTable FailedListID = LabSys.GetLogByRecipientIdList_Failed(int.Parse(notificationRecipientID));
 
                     ////get date and time today
                     //date1 = Convert.ToDateTime(sendingDate);
@@ -156,7 +161,7 @@ namespace SmsManager
             }
             catch (Exception ex)
             {
-                MessageBox.Show("SMS Manager cannot connect to the server.");
+                MessageBox.Show("SMS Manager cannot connect to the server. " + ex.ToString());
             }
         }
 
@@ -209,8 +214,8 @@ namespace SmsManager
             // 3 = content
 
             DetailsDateSending.Text = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
-            DetailsRecipients.Text = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
-            DetailsContent.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsRecipients.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsContent.Text = dataGridView1.Rows[rowindex].Cells[3].Value.ToString();
 
         }
 
@@ -231,12 +236,12 @@ namespace SmsManager
             //column index guide 
             // 0 = id
             // 1 = date
-            // 2 = type
+            // 2 = recipient number
             // 3 = content
 
             DetailsDateSending.Text = dataGridView1.Rows[rowindex].Cells[1].Value.ToString();
-            DetailsRecipients.Text = dataGridView1.Rows[rowindex].Cells[0].Value.ToString();
-            DetailsContent.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsRecipients.Text = dataGridView1.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsContent.Text = dataGridView1.Rows[rowindex].Cells[3].Value.ToString();
         }
 
         private void dataGridView2_CellEnter(object sender, DataGridViewCellEventArgs e)
@@ -255,9 +260,9 @@ namespace SmsManager
             // 2 = type
             // 3 = content
 
-            DetailsDateSending.Text = dataGridView2.Rows[rowindex].Cells[1].Value.ToString();
-            DetailsRecipients.Text = dataGridView2.Rows[rowindex].Cells[0].Value.ToString();
-            DetailsContent.Text = dataGridView2.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsDateSending.Text = dataGridView2.Rows[rowindex].Cells[0].Value.ToString();
+            DetailsRecipients.Text = dataGridView2.Rows[rowindex].Cells[2].Value.ToString();
+            DetailsContent.Text = dataGridView2.Rows[rowindex].Cells[3].Value.ToString();
         }
 
         #endregion

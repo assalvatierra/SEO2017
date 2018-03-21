@@ -19,7 +19,7 @@ namespace SmsManager
         DataTable GetDetails();
         DataTable GetRecipientsList(int NotificationId);
         DataTable FailedItems();
-        DataTable GetLogByRecipientIdList_Failed(int notificationRecipientID);
+        //DataTable GetLogByRecipientIdList_Failed(int notificationRecipientID);
 
         string SendSMS(string Recipient, string Message);
         void SendAdminNotif(SmsSender adminList);
@@ -103,7 +103,9 @@ namespace SmsManager
         //get sending details, message 
         public DataTable FailedItems()
         {
-            return webData.Getcontent(localhost + "getFailedItems");
+            //http://localhost:63556/SmsService.asmx/getFailedNotif
+            //return webData.Getcontent(localhost + "getFailedNotif");
+            return webData.Getcontent("http://localhost:63556/SmsService.asmx/getFailedNotif");
         }
 
 
@@ -121,18 +123,18 @@ namespace SmsManager
             return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
         }
         
-        public DataTable GetLogByRecipientIdList_Failed(string notificationRecipientID)
-        {
+        //public DataTable GetLogByRecipientIdList_Failed(string notificationRecipientID)
+        //{
 
-            string url = localhost + "updateLog";
+        //    string url = localhost + "updateLog";
 
-            var data = new NameValueCollection();
-            data["notificationRecipientID"] = notificationRecipientID.ToString();
+        //    var data = new NameValueCollection();
+        //    data["notificationRecipientID"] = notificationRecipientID.ToString();
 
-            var json = webData.sendMsgData(localhost + "getRecipientsLists_Failed", data);
+        //    var json = webData.sendMsgData(localhost + "getRecipientsLists_Failed", data);
 
-            return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
-        }
+        //    return (DataTable)JsonConvert.DeserializeObject(json, (typeof(DataTable)));
+        //}
         
         //send sms 
         public string SendSMS(string Recipient, string Message) {

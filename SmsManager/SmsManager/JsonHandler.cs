@@ -132,7 +132,7 @@ namespace SmsManager
 
                     DataSet dataset = JsonConvert.DeserializeObject<DataSet>(json);
 
-                     dataTable = dataset.Tables["Table"];
+                     dataTable = (dataset.Tables["Table"]!=null) ? dataset.Tables["Table"] : dataset.Tables["Table1"];
                     //Console.WriteLine(responseInString);
 
 

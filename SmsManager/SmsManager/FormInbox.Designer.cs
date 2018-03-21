@@ -63,11 +63,11 @@
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(29, 45);
+            this.dataGridView1.Location = new System.Drawing.Point(13, 45);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(792, 435);
+            this.dataGridView1.Size = new System.Drawing.Size(809, 448);
             this.dataGridView1.TabIndex = 12;
             // 
             // refreshBtn
